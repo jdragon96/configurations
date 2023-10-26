@@ -1,0 +1,36 @@
+#! https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+BasedOnStyle: LLVM
+IndentWidth: 2
+
+# 1. C/C++
+Language: Cpp
+# 1.1 정렬 옵션
+# 1.1.1 포인터
+#! ??? 확실하지 않음
+DerivePointerAlignment: true
+#! Left(포인터를 타입에 붙여서 정렬한다.)
+PointerAlignment: Left
+#! Align: 최대 Column 길이에 맞춰 함수 파라미터를 자른다.
+AlignAfterOpenBracket: Align
+
+# 1.1.2 상수정렬
+#! Global 영역에 상수 정의 시, 길이를 맞춘다.
+AlignConsecutiveAssignments: Consecutive
+#! Define 영역을 정렬한다.
+AlignConsecutiveMacros: Consecutive
+#! Local 영역 내 상수 정의 시, 길이를 맞춘다.
+AlignConsecutiveDeclarations: Consecutive
+#! Switch-case문 정렬
+AlignConsecutiveShortCaseStatements:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: true
+  AlignCaseColons: false
+#! Escape 문자 정렬
+# AlignEscapedNewlines: Left
+#! 코맨트 정렬
+AlignTrailingComments:
+  Kind: Always 
+  OverEmptyLines: 2 # ";" 이후 몇칸 띌건지
+#! 코드 빈 라인을 최대 몇개 허용할건지?
+MaxEmptyLinesToKeep: 3
