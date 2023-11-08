@@ -1,36 +1,81 @@
-#! https://clang.llvm.org/docs/ClangFormatStyleOptions.html
-BasedOnStyle: LLVM
-IndentWidth: 2
+BasedOnStyle:  Google
+ColumnLimit:    120
+MaxEmptyLinesToKeep: 1
+SortIncludes: false
 
-# 1. C/C++
-Language: Cpp
-# 1.1 정렬 옵션
-# 1.1.1 포인터
-#! ??? 확실하지 않음
-DerivePointerAlignment: true
-#! Left(포인터를 타입에 붙여서 정렬한다.)
-PointerAlignment: Left
-#! Align: 최대 Column 길이에 맞춰 함수 파라미터를 자른다.
-AlignAfterOpenBracket: Align
+Standard:        Auto
+IndentWidth:     2
+TabWidth:        2
+UseTab:          Never
+AccessModifierOffset: -2
+ConstructorInitializerIndentWidth: 2
+NamespaceIndentation: None
+ContinuationIndentWidth: 4
+IndentCaseLabels: true
+IndentFunctionDeclarationAfterType: false
 
-# 1.1.2 상수정렬
-#! Global 영역에 상수 정의 시, 길이를 맞춘다.
+AlignEscapedNewlinesLeft: false
+AlignTrailingComments: true
+
 AlignConsecutiveAssignments: Consecutive
-#! Define 영역을 정렬한다.
 AlignConsecutiveMacros: Consecutive
-#! Local 영역 내 상수 정의 시, 길이를 맞춘다.
-AlignConsecutiveDeclarations: Consecutive
-#! Switch-case문 정렬
-AlignConsecutiveShortCaseStatements:
-  Enabled: true
-  AcrossEmptyLines: true
-  AcrossComments: true
-  AlignCaseColons: false
-#! Escape 문자 정렬
-# AlignEscapedNewlines: Left
-#! 코맨트 정렬
-AlignTrailingComments:
-  Kind: Always 
-  OverEmptyLines: 2 # ";" 이후 몇칸 띌건지
-#! 코드 빈 라인을 최대 몇개 허용할건지?
-MaxEmptyLinesToKeep: 3
+AlignConsecutiveDeclarations: Consecutive  
+
+AllowAllParametersOfDeclarationOnNextLine: false
+ExperimentalAutoDetectBinPacking: false
+ObjCSpaceBeforeProtocolList: true
+Cpp11BracedListStyle: false
+
+AllowShortBlocksOnASingleLine: true
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortCaseLabelsOnASingleLine: false
+
+AlwaysBreakTemplateDeclarations: true
+AlwaysBreakBeforeMultilineStrings: false
+BreakBeforeBinaryOperators: false
+BreakBeforeTernaryOperators: false
+BreakConstructorInitializersBeforeComma: true
+
+BinPackParameters: true
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+DerivePointerBinding: false
+PointerBindsToType: true
+
+PenaltyExcessCharacter: 50
+PenaltyBreakBeforeFirstCallParameter: 30
+PenaltyBreakComment: 1000
+PenaltyBreakFirstLessLess: 10
+PenaltyBreakString: 100
+PenaltyReturnTypeOnItsOwnLine: 50
+
+SpacesBeforeTrailingComments: 2
+SpacesInParentheses: false
+SpacesInAngles:  false
+SpaceInEmptyParentheses: false
+SpacesInCStyleCastParentheses: false
+SpaceAfterCStyleCast: false
+SpaceAfterControlStatementKeyword: true
+SpaceBeforeAssignmentOperators: true
+
+# Configure each individual brace in BraceWrapping
+BreakBeforeBraces: Custom
+
+# Qualifiers (const, volatile, static, etc)
+# QualifierAlignment: Custom
+# QualifierOrder: ['static', 'inline', 'constexpr', 'const', 'volatile', 'type']
+
+# Control of individual brace wrapping cases
+BraceWrapping:
+    AfterCaseLabel: true
+    AfterClass: true
+    AfterControlStatement: true
+    AfterEnum: true
+    AfterFunction: true
+    AfterNamespace: true
+    AfterStruct: true
+    AfterUnion: true
+    BeforeCatch: true
+    BeforeElse: true
+    IndentBraces: false
